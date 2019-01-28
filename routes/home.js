@@ -6,24 +6,7 @@ const applicationController = require('../controllers/home')
 // Format: router.METHOD('PATH', HANDLER) ie router.get('/', controller.action)
 
 
-router.get('/', function(req, res) {
+router.get('/', applicationController.index )
 
-})
-
-router.post('/', function(req, res) {
-
-})
-
-router.put('/:id', function(req, res) {
-
-})
-
-router.patch('/:id', function(req, res) {
-
-})
-
-router.delete('/:id', function(req, res) {
-
-})
 
 module.exports = router
