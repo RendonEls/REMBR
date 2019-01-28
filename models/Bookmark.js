@@ -2,7 +2,7 @@ const mongoose = require('../db/connection.js')
 const Schema = mongoose.Schema
 
 const Bookmark = new Schema ({
-    text: String,
+    title: String,
     url: String,
     text: String,
     createdAt: {

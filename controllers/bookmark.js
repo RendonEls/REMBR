@@ -1,44 +1,27 @@
-// const { Bookmark } = require("../models/Bookmark");
+const { Bookmark } = require("../models/Bookmark");
 
-// module.exports = {
+module.exports = {
 //   show: (req, res) => {
 //      Bookmark.findOne({_id: req.params.id})
 //       .populate("author comments.author")
 //       .exec(function(err, tweet) {
-//        res.render("tweet/show", tweet);
+//        res.render("bookmark/show", bookmark);
 //      })
 //   },
-//   new: (req, res) => {
-//     res.render("tweet/new");
-//   },
-//   create: (req, res) => {
-//     Bookmark.create({
-//       content: req.body.tweet.content,
-//       author: req.user._id
-//     }).then(tweet => {
-//       req.user.tweets.push(tweet);
-//       req.user.save(err => {
-//         res.redirect(`/tweet/${tweet._id}`);
-//       });
-//     });
-//   },
-//   update: (req, res) => {
-//     let { content } = req.body;
-//     Tweet.findOne({ _id: req.params.id }).then(tweet => {
-//       tweet.comments.push({
-//         content,
-//         author: req.user._id
-//       });
-//       tweet.save(err => {
-//         res.redirect(`/tweet/${tweet._id}`);
-//       });
-//     });
-//   },
-//   requireAuth: function(req, res, next) {
-//     if (req.isAuthenticated()) {
-//       next();
-//     } else {
-//       res.redirect("/");
-//     }
-//   }
-// };
+  new: (req, res) => {
+    res.render("bookmark/new");
+  },
+  create: (req, res) => {
+    Bookmark.create({
+      title: req.body.title,
+      url: req.body.url,
+      text: req.body.text
+    }).then(create => {
+      req.user.bookmarks.push(create);
+      req.user.save(err => {
+        res.redirect(`/bookmark/`);
+      });
+    });
+  },
+
+};
