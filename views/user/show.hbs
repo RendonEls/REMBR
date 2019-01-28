@@ -1,12 +1,12 @@
 <section class="profile">
-  <h2>{{user.local.username}}</h2>
-  {{#if user.posts}}
-    <div class="posts">
-      {{#each user.posts}}
+  <h2>{{user.email}}</h2>
+  {{#if user.bookmarks}}
+    <div class="bookmarks">
+      {{#each user.bookmarks}}
          {{log this}}
       {{/each}}
     </div>
   {{else}}
-    <p>No Posts yet</p>
+    <p>No saved bookmarks yet</p>
   {{/if}}
 </section>

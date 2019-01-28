@@ -6,11 +6,11 @@ module.exports = {
     show: (req, res) => {
       User.findOne({ _id: req.params.id })
         .populate({
-          path: "posts",
+          path: "bookmarks",
           options: { limit: 5, sort: { createdAt: -1 } }
         })
         .then(user => {
-          res.render("user/show", { user });
+          res.render("/user/show", { user });
         });
     },
     login: (req, res) => {
@@ -18,8 +18,8 @@ module.exports = {
     },
     createLogin: (req, res) => {
       const login = passport.authenticate("local-login", {
-        successRedirect: "/",
-        failureRedirect: "user/login",
+        successRedirect: "/",  //home
+        failureRedirect: "/user/login",
         failureFlash: true
       });
   
@@ -33,7 +33,7 @@ module.exports = {
       
       const signupStrategy = passport.authenticate("local-signup", {
         successRedirect: "/",
-        failureRedirect: "user/signup",
+        failureRedirect: "/user/signup",
         failureFlash: true
       });
   

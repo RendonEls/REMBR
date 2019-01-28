@@ -22,7 +22,7 @@ module.exports = function(passport) {
       },
       function(req, email, password, callback) {
         //find user by this email
-        User.findOne({ 'email': email })        //local.email??
+        User.findOne({ 'email': email })
           .then(user => {
               //if user with email exists:
             if (user) {
