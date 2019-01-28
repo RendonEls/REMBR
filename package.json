@@ -25,6 +25,7 @@
   "homepage": "https://github.com/RendonEls/REMBR#readme",
   "dependencies": {
     "express": "^4.16.4",
+    "mongoose": "^5.4.7",
     "node": "^11.8.0"
   }
 }
