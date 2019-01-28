@@ -1,10 +1,6 @@
 const LocalStrategy = require("passport-local").Strategy;
 const User = require("../models/User");
 
-// const passport = require('passport')
-// require('./config/passport')(passport)
-// app.use(passport.initialize())
-// app.use(passport.session())
 
 module.exports = function(passport) {
     //keeps user logged in by serializing ID to save it to the session
@@ -26,7 +22,7 @@ module.exports = function(passport) {
       },
       function(req, email, password, callback) {
         //find user by this email
-        User.findOne({ 'local.email': email })        //local.email??
+        User.findOne({ 'email': email })        //local.email??
           .then(user => {
               //if user with email exists:
             if (user) {
@@ -62,7 +58,7 @@ module.exports = function(passport) {
         passReqToCallback: true
       },
       function(req, email, password, callback) {
-        User.findOne({ 'local.email': email }, function(err, user) {
+        User.findOne({ 'email': email }, function(err, user) {
           if (err) return callback(err);
 
           if (!user) {

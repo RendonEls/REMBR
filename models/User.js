@@ -1,14 +1,14 @@
 const mongoose = require("../db/connection")
-const bcrypt = require("bcrypt-nodejs");
 const Schema = mongoose.Schema;
+const bcrypt = require("bcrypt-nodejs");
 
 const User = new Schema({
     email: String,
     password: String,
-    tweets: [
+    bookmarks: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Tweet"
+        ref: "Bookmark"
       }
     ]
   });

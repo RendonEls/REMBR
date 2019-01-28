@@ -11,4 +11,4 @@ const Bookmark = new Schema ({
     }
 })
 
-module.exports = mongoose.model({Bookmark})  //DOES THIS NEED TO BE {}
+module.exports = mongoose.model("Bookmark", Bookmark)  //DOES THIS NEED TO BE {}

@@ -1,0 +1,12 @@
+<section class="profile">
+  <h2>{{user.local.username}}</h2>
+  {{#if user.posts}}
+    <div class="posts">
+      {{#each user.posts}}
+         {{log this}}
+      {{/each}}
+    </div>
+  {{else}}
+    <p>No Posts yet</p>
+  {{/if}}
+</section>

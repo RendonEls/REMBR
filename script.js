@@ -23,7 +23,7 @@ require("./config/passport")(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 
-hbs.registerPartials(__dirname + "/views/partials");
+// hbs.registerPartials(__dirname + "/views/partials");
 
 app.use(express.static("public"));
 app.set("view engine", "hbs");
