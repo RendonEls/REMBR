@@ -17,26 +17,27 @@ module.exports = function(passport) {
     });
   });
 
-  passport.use(
-    "local-signup",
-    new LocalStrategy(
-      {
-        usernameField: "username",
+  passport.use( "local-signup", new LocalStrategy({
+        usernameField: "email",
         passwordField: "password",
         passReqToCallback: true
       },
-      function(req, username, password, callback) {
-        User.findOne({ username: username })
+      function(req, email, password, callback) {
+        //find user by this email
+        User.findOne({ 'local.email': email })        //local.email??
           .then(user => {
+              //if user with email exists:
             if (user) {
               return callback(
                 null,
                 false,
-                req.flash("signupMessage", "this username is already taken")
+                req.flash("signupMessage", "This email is already registered.")
               );
             } else {
+                //there is no email registered
+                //create new account
               let newUser = new User();
-              newUser.username = username;
+              newUser.email = email;
               newUser.password = newUser.encrypt(password);
 
               newUser.save(err => {
