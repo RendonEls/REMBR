@@ -1,27 +1,48 @@
-const { Bookmark } = require("../models/Bookmark");
+const Bookmark = require("../models/Bookmark");
 
 module.exports = {
 //   show: (req, res) => {
 //      Bookmark.findOne({_id: req.params.id})
-//       .populate("author comments.author")
-//       .exec(function(err, tweet) {
-//        res.render("bookmark/show", bookmark);
+//       .exec(function(err, bookmark) {
+//        res.render("user/show", user);
 //      })
 //   },
-  new: (req, res) => {
+  newBookmark: (req, res) => {
     res.render("bookmark/new");
+    console.log('test newbookmark')
   },
-  create: (req, res) => {
+  createBookmark: (req, res) => {
+    console.log("is it hiting this function??")
     Bookmark.create({
       title: req.body.title,
       url: req.body.url,
       text: req.body.text
     }).then(create => {
-      req.user.bookmarks.push(create);
+        console.log("is it hiting this .then push function??")
+      req.user.bookmark.push(create);
+        res.redirect('/')
       req.user.save(err => {
-        res.redirect(`/bookmark/`);
+        res.redirect('/bookmark');
       });
     });
   },
-
+//   update: (req, res) => {
+//     let { content } = req.body;
+//     Bookmark.findOne({ _id: req.params.id }).then(bookmark => {
+//       bookmark.title.push({
+//         title,
+//         author: req.user._id
+//       });
+//       tweet.save(err => {
+//         res.redirect(`/bookmark/${bookmark._id}`);
+//       });
+//     });
+//   },
+  requireAuth: function(req, res, next) {
+    if (req.isAuthenticated()) {
+      next();
+    } else {
+      res.redirect("/");
+    }
+  }
 };

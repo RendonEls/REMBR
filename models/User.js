@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt-nodejs");
 const User = new Schema({
     email: String,
     password: String,
-    bookmarks: [
+    bookmark: [
       {
         type: Schema.Types.ObjectId,
         ref: "Bookmark"
