@@ -4,27 +4,23 @@ const passport = require("passport");
 
 module.exports = {
     show: (req, res) => {
-      res.send("hi")
-      User.findOne({ _id: req.params.id })
-        .populate("user.bookmark")
-        //   {
-        //   path: "user.bookmark",
-        //   options: { limit: 5, sort: { createdAt: -1 } }
-        // })
-        .exec(function(err, user) {
-          res.render("user/show", user);
-        });
+      User.findOne({}).then(result => res.send(result._id))
+      // User.findOne({}).then(result => res.send(result))
+      // res.send({ _id: req.params.id })
+      // User.findOne({ _id: req.params.id })
+      //   .populate("user.bookmark")
+      //   //   {
+      //   //   path: "user.bookmark",
+      //   //   options: { limit: 5, sort: { createdAt: -1 } }
+      //   // })
+      //   .exec(function(err, user) {
+      //     res.render("user/show", user);
+      //   });
     },
     login: (req, res) => {
           res.render("user/login", { message: req.flash("loginMessage") });
     },
     createLogin: (req, res) => {
-      // let newUser = {}
-      // User.findOne({"email": req.body.email}).then(result => {
-      //   console.log(result)
-      //   return newUser = result
-      // })
-  
       const login = passport.authenticate("local-login", {
         successRedirect: '/user/' + req.body.email,  //user/show 
         failureRedirect: "/user/login",
