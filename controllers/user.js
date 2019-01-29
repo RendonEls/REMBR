@@ -15,11 +15,17 @@ module.exports = {
       //   });
     },
     login: (req, res) => {
-      res.render("user/login", { message: req.flash("loginMessage") });
+          res.render("user/login", { message: req.flash("loginMessage") });
     },
     createLogin: (req, res) => {
+      let newUser = ""
+      User.findOne({"email": req.body.email}).then(result => {
+        return newUser = result
+        console.log(newUser)
+      })
+      console.log(newUser)
       const login = passport.authenticate("local-login", {
-        successRedirect: "/",  //user/show 
+        successRedirect: `/user/{newUser._id}`,  //user/show 
         failureRedirect: "/user/login",
         failureFlash: true
       });
@@ -49,6 +55,8 @@ module.exports = {
       req.logout();
       res.redirect("/");
     }
+
+    //update user.bookmark function //also add route 
   };
 
 
