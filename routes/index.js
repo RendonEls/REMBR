@@ -3,7 +3,7 @@ const router = express.Router();
 
 router.use('/', require('./home'))
 router.use('/user', require('./user'));
-router.use('/bookmark', require('./bookmark'));
+// router.use('/bookmark', require('./bookmark'));
 
 
 router.all('*', (req, res) => {
