@@ -18,7 +18,7 @@ module.exports = {
     },
     createLogin: (req, res) => {
       const login = passport.authenticate("local-login", {
-        successRedirect: "/",  //home
+        successRedirect: "/",  //user/show 
         failureRedirect: "/user/login",
         failureFlash: true
       });
@@ -44,3 +44,6 @@ module.exports = {
       res.redirect("/");
     }
   };
+
+
+  //add update and delete methods for user

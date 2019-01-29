@@ -11,4 +11,4 @@ const Bookmark = new Schema ({
     }
 })
 
-module.exports = mongoose.model("Bookmark", Bookmark) //"Bookmark" or "Bookmarks?"
+module.exports = mongoose.model("Bookmark", Bookmark) 

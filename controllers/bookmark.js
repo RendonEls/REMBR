@@ -12,14 +12,14 @@ module.exports = {
     console.log('test newbookmark')
   },
   createBookmark: (req, res) => {
-    console.log("is it hiting this function??")
+    console.log("is it hiting this function??")  
     Bookmark.create({
-      title: req.body.title,
+      title: req.body.bookmark.title,
       url: req.body.url,
       text: req.body.text
     }).then(create => {
         console.log("is it hiting this .then push function??")
-      req.user.bookmark.push(create);
+      req.user.bookmarks.push(create);
         res.redirect('/')
       req.user.save(err => {
         res.redirect('/bookmark');
