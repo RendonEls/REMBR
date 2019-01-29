@@ -7,6 +7,6 @@ const applicationController = require('../controllers/home')
 
 
 router.get('/', applicationController.index )
-
+//change this to go directly to login
 
 module.exports = router

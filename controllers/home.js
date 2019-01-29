@@ -1,4 +1,4 @@
-const {Bookmark} = require("../models/Bookmark")
+const {Bookmark, User} = require("../models/Bookmark")
 
 
 module.exports = {
@@ -7,3 +7,5 @@ module.exports = {
     }
   }
   
+
+  //can probably remove this entire page

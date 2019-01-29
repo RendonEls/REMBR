@@ -1,17 +1,18 @@
 
-const User = require("../models/User")
+const {User, Bookmark} = require("../models/User")
 const passport = require("passport");
 
 module.exports = {
     show: (req, res) => {
-      User.findOne({ _id: req.params.id })
-        .populate({
-          path: "bookmarks",
-          options: { limit: 5, sort: { createdAt: -1 } }
-        })
-        .then(user => {
-          res.render("/user/show", { user });
-        });
+      res.send("test")
+      // User.findOne({ _id: req.params.id })
+      //   .populate({
+      //     path: "bookmarks",
+      //     options: { limit: 5, sort: { createdAt: -1 } }
+      //   })
+      //   .then(user => {
+      //     res.render("/user/show", { user });
+      //   });
     },
     login: (req, res) => {
       res.render("user/login", { message: req.flash("loginMessage") });
@@ -22,9 +23,11 @@ module.exports = {
         failureRedirect: "/user/login",
         failureFlash: true
       });
-  
       return login(req, res);
     },
+
+
+
     signUp: (req, res) => {
       res.render("user/signup", { message: req.flash("signupMessage") });
     },
@@ -39,6 +42,9 @@ module.exports = {
   
       return signupStrategy(req, res, next);
     },
+
+
+
     logout: (req, res) => {
       req.logout();
       res.redirect("/");
@@ -47,3 +53,6 @@ module.exports = {
 
 
   //add update and delete methods for user
+
+
+  
