@@ -12,12 +12,9 @@ router.post('/signup', userController.createSignUp);
 router.get('/logout', userController.logout);
 
 router.get('/show', userController.show);
-
-
 router.get('/update', userController.update)
+router.post('/update/:id', userController.createBookmark)
 
-router.post('/update/:id', userController.updateBookmark)
 
-// router.post('/:id', userController.update)
 
 module.exports = router

@@ -4,13 +4,15 @@
   <section class="profile">
     <div class="bookmarks">
       <p>{{email}}</p>
+      <div>
   {{#each user.bookmark}}
       <p>{{title}}</p>
       <p>{{url}}</p>
       <p>{{text}}</p>
   {{/each}}
+  </div>
     </div>
   </section>
 {{/if}}
 
- {{user.bookmark}}
+<input type="submit" value="Add New" class="btn waves-effect waves-light" onclick="location.href='/user/update'">
