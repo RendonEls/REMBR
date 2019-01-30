@@ -27,7 +27,6 @@ app.use(function (req, res, next) {
   res.locals.currentUser = req.user;
   next();
 });
-// hbs.registerPartials(__dirname + "/views/partials");
 
 app.use(express.static("public"));
 app.set("view engine", "hbs");

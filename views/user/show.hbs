@@ -1,17 +1,16 @@
 
 <h1>this needs to work</h1>
-{{result}}
-
-{{!-- 
-<section class="profile">
-  <h2>{{user.email}}</h2>
-  {{#if user.bookmarks}}
+{{#if user}}
+  <section class="profile">
     <div class="bookmarks">
-      {{#each user.bookmarks}}
-         {{log this}}
-      {{/each}}
+      <p>{{email}}</p>
+  {{#each user.bookmark}}
+      <p>{{title}}</p>
+      <p>{{url}}</p>
+      <p>{{text}}</p>
+  {{/each}}
     </div>
-  {{else}}
-    <p>No saved bookmarks yet</p>
-  {{/if}}
-</section> --}}
+  </section>
+{{/if}}
+
+ {{user.bookmark}}

@@ -4,10 +4,10 @@ const passport = require("passport");
 
 module.exports = {
     show: (req, res) => {
-      console.log(req.user)
+      User.findOne(req.user).then(user => res.render('user/show', {user}))
       // console.log(req.currentUser)
       // console.log(res.locals)
-      User.find({}).then(result => res.render('user/show', {result}))
+
     //This needs to display all data from User.bookmarks
     //Also needs to tie into show view
 
@@ -56,7 +56,6 @@ module.exports = {
       User.findOne({}).then(result => res.render('user/update', {result}))
     },
     updateBookmark: (req, res) => {
-      let currentUser = ""
       User.findById(req.user._id).then(user => {
         Bookmark.create({
           title: req.body.title,
@@ -71,13 +70,3 @@ module.exports = {
     }
   };
   
-
-
-
-
-      // user.findById
-      // then
-      // inside then
-      // Bookmark.create()
-      // then(newBookmark => {})
-      // user.bookmark.push( newBookmark 
