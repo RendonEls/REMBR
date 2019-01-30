@@ -26,7 +26,7 @@ module.exports = {
     },
     createLogin: (req, res) => {
       const login = passport.authenticate("local-login", {
-        successRedirect: '/user/' + req.body.email,  //user/show 
+        successRedirect: "/user/show",  
         failureRedirect: "/user/login",
         failureFlash: true
       });
@@ -52,8 +52,10 @@ module.exports = {
     logout: (req, res) => {
       req.logout();
       res.redirect("/");
+    },
+    update: (req, res) => {
+      res.render("user/update", {message: req.flash("update here")})
     }
-
     //update user.bookmark function //also add route 
   };
 
