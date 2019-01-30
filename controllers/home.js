@@ -1,4 +1,4 @@
-const {Bookmark, User} = require("../models/Bookmark")
+const {Bookmark, User} = require("../models/User")
 
 
 module.exports = {

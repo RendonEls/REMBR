@@ -5,6 +5,10 @@ const passport = require("passport");
 module.exports = {
     show: (req, res) => {
       User.findOne({}).then(result => res.send(result._id))
+
+    //This needs to display all data from User.bookmarks
+    //Also needs to tie into show view
+
       // User.findOne({}).then(result => res.send(result))
       // res.send({ _id: req.params.id })
       // User.findOne({ _id: req.params.id })
@@ -45,9 +49,6 @@ module.exports = {
   
       return signupStrategy(req, res, next);
     },
-
-
-
     logout: (req, res) => {
       req.logout();
       res.redirect("/");
