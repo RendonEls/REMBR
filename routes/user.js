@@ -13,7 +13,15 @@ router.get('/logout', userController.logout);
 
 router.get('/show', userController.show);
 
+
+//working on updating these bottom two routes
+//Get will load user/show
+//need to figure out how to get the forum data into db.user
+
+
 router.get('/update', userController.update)
+
+router.put('/update/:id', userController.updateBookmark)
 
 // router.post('/:id', userController.update)
 

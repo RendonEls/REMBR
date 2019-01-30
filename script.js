@@ -23,6 +23,10 @@ require("./config/passport")(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(function (req, res, next) {
+  res.locals.currentUser = req.user;
+  next();
+});
 // hbs.registerPartials(__dirname + "/views/partials");
 
 app.use(express.static("public"));

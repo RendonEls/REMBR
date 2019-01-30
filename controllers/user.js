@@ -4,8 +4,10 @@ const passport = require("passport");
 
 module.exports = {
     show: (req, res) => {
-      User.findOne({}).then(result => res.send(result._id))
-
+      console.log(req.user)
+      console.log(req.currentUser)
+      console.log(res.locals)
+      User.find({}).then(result => res.render('user/show', {result}))
     //This needs to display all data from User.bookmarks
     //Also needs to tie into show view
 
@@ -32,9 +34,6 @@ module.exports = {
       });
       return login(req, res);
     },
-
-
-
     signUp: (req, res) => {
       res.render("user/signup", { message: req.flash("signupMessage") });
     },
@@ -54,13 +53,25 @@ module.exports = {
       res.redirect("/");
     },
     update: (req, res) => {
-      res.render("user/update", {message: req.flash("update here")})
+      User.findOne({}).then(result => res.render('user/update', {result}))
+    },
+    updateBookmark: (req, res) => {
+      // user.findById
+      // then
+      // inside then
+      // Bookmark.create()
+      // then(newBookmark => {})
+      // user.bookmark.push( newBookmark )
+
+      User.bookmark.create([{
+        title: req.body.bookmark.title,
+        url: req.body.bookmark.url,
+        text: req.body.bookmark.text,
+      }])
+        
+        
+      // .then(() => User.find({}).then(result => console.log(result)))
+      // res.render("/user/show", result);
     }
-    //update user.bookmark function //also add route 
   };
-
-
-  //add update and delete methods for user
-
-
   

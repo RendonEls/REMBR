@@ -1,18 +1,22 @@
 <section class="row">
   <h4>New REMBR:</h4>
+{{result}}
+{{!-- action = url --}}
 
-  <form action="update" method="put" class="createRembr">
+  <form action="user/update/{{result.id}}" method="put" class="createRembr">
     <p class="input-field">
-      <input type="title" name="title" placeholder="title">
+      <input type="text" name="bookmark[title]" placeholder="title">
     </p>
     <p class="input-field">
-      <input type="url" name="url" placeholder="url">
+      <input type="url" name="bookmark[url]" placeholder="url">
     </p>
     <p class="input-field">
-      <input type="text" name="text" placeholder="text">
+      <input type="text" name="bookmark[text]" placeholder="text">
     </p>
     <p class="input-field">
-      <input type="submit" value="Submit" class="btn waves-effect waves-light">
+      <input type="submit" value="User" class="btn waves-effect waves-light">
     </p>
   </form>
 </section>
+
+
