@@ -21,7 +21,7 @@ router.get('/show', userController.show);
 
 router.get('/update', userController.update)
 
-router.put('/update/:id', userController.updateBookmark)
+router.post('/update/:id', userController.updateBookmark)
 
 // router.post('/:id', userController.update)
 
