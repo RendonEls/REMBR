@@ -72,5 +72,10 @@ module.exports = {
       user.save()
       res.redirect('/user/show')
   })
+  },
+  newNote:  (req, res) => {
+    User.findOne({})
+    .then(result => res.render("user/newNote", { result }));
   }
+ 
 }
