@@ -1,0 +1,33 @@
+  
+  {{#if user}}
+  <section class="profile">
+    <div class="bookmarks">
+      <p>{{email}}</p>
+      <div>
+        <ul>
+  {{#each user.bookmark}}
+  <div class="{{_id}}">
+    <a href="{{url}}">{{title}}</a>
+        <li>{{text}}</li>
+        {{_id}}
+  </div>
+  {{/each}}
+
+  {{!-- need to display specific bookmark that the user selected - by id? --}}
+  
+  
+  <form action="/user/newBookmark/{{result.id}}" method="post" class="createRembr">
+    <p class="input-field">
+      <input type="text" name="title" placeholder="title">
+    </p>
+    <p class="input-field">
+      <input type="url" name="url" placeholder="url">
+    </p>
+    <p class="input-field">
+      <input type="text" name="text" placeholder="text">
+    </p>
+    <p class="input-field">
+      <input type="submit" value="User" class="btn waves-effect waves-light">
+    </p>
+  </form>
+</section>

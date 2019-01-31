@@ -5,14 +5,18 @@
     <div class="bookmarks">
       <p>{{email}}</p>
       <div>
+        <ul>
   {{#each user.bookmark}}
-      <p>{{title}}</p>
-      <p>{{url}}</p>
-      <p>{{text}}</p>
+  <div class="{{_id}}">
+    <a href="{{url}}">{{title}}</a>
+        <li>{{text}}</li>
+        {{_id}}
+  </div>
   {{/each}}
+  </ul>
   </div>
     </div>
   </section>
 {{/if}}
 
-<input type="submit" value="Add New" class="btn waves-effect waves-light" onclick="location.href='/user/update'">
+<input type="submit" value="Add New" class="btn waves-effect waves-light" onclick="location.href='/user/newBookmark'">

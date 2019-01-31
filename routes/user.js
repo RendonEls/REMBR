@@ -12,8 +12,15 @@ router.post('/signup', userController.createSignUp);
 router.get('/logout', userController.logout);
 
 router.get('/show', userController.show);
-router.get('/update', userController.update)
-router.post('/update/:id', userController.createBookmark)
+router.get('/newBookmark', userController.createBookmark)
+router.post('/newBookmark/:id', userController.NewBookmark)
+
+// router.show('/newBookmark/:id', userController.NewBookmark)   //show one bookmark but to where? make a deletebookmark?
+
+// router.put('/newBookmark/:id', userController.UpdateBookmark)  
+// router.delete('/newBookmark/:id', userController.DeleteBookmark)
+
+//newbookmark/:id needs to route to a new site that displays one individual bookmark
 
 
 
