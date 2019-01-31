@@ -54,17 +54,15 @@ module.exports = {
   },
 
   UpdateBookmark: (req, res) => {
-    Bookmark.findByIdAndUpdate(req.params._id).then(() => {
-      req.body
-      // Bookmark.update({
-      //   title: req.body.title,
-      //   url: req.body.url,
-      //   text: req.body.text
-      // })
-      console.log(req.body)
-      res.render('/user/show')
-      // console.log(user)   //need to be able to access the correct user to update the bookmark object
-    })
+    User.findOneAndUpdate(
+      {"_id": req.user._id, "bookmark._id": req.params.id},
+      { "$set": {
+          "bookmark.$.title": req.body.title,
+          "bookmark.$.url": req.body.url,
+          "bookmark.$.text": req.body.text
+        },
+      },{new: true}
+    ).then(() => res.redirect('/user/show'))
   },
 
   DeleteBookmark: (req, res) => {
@@ -75,21 +73,16 @@ module.exports = {
 }
 
 
+   // (req.user._id).then(user => {
 
-// Bookmark.findOneAndUpdate(
-//   {id: req.params._id}, 
-//   req.body, {new:true}).then((overwrite) => {
-//     console.log(overwrite)
-//     title = overwrite.title
-//     url = overwrite.url
-//     text = overwrite.text
-  
-//     overwrite.save()
-//   // req.body
-//   // Bookmark.update({
-//   //   title: req.body.title,
-//   //   url: req.body.url,
-//   //   text: req.body.text
-//   // })
-//   console.log(req.body)
-//   res.redirect("/user/show")
+    // })
+    // Bookmark.findByIdAndUpdate(req.params._id).then(() => {
+    //   req.body
+    //   // Bookmark.update({
+    //   //   title: req.body.title,
+    //   //   url: req.body.url,
+    //   //   text: req.body.text
+    //   // })
+    //   console.log(req.body)
+    //   // console.log(user)   //need to be able to access the correct user to update the bookmark object
+    // })
