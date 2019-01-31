@@ -42,10 +42,11 @@ module.exports = {
         title: req.body.title,
         url: req.body.url,
         text: req.body.text
-      }).then(newBookmark => {
+      })
+        .then(newBookmark => {
         user.bookmark.push(newBookmark);
-        user.save();
-        res.render("/user/show");
+        user.save().then(()=> res.render("user/show")
+        );
       });
     });
   },
@@ -67,7 +68,8 @@ module.exports = {
 
   DeleteBookmark: (req, res) => {
     console.log(req.params.id)
-    Bookmark.findOneAndDelete({ _id: req.params.id })  //how to target id from list instead of url
+    User.findOneAndDelete(
+      {"_id": req.user._id, "bookmark._id": req.params.id})
     .then(() => res.redirect('/user/show'))
   }
 }
