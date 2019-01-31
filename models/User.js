@@ -2,6 +2,10 @@ const mongoose = require("../db/connection")
 const Schema = mongoose.Schema;
 const bcrypt = require("bcrypt-nodejs");
 
+const Note = new Schema ({
+  title: String,
+  note: String
+})
 
 const Bookmark = new Schema ({
   title: String,
@@ -16,7 +20,8 @@ const Bookmark = new Schema ({
 const User = new Schema({
     email: String,
     password: String,
-    bookmark: [Bookmark]
+    bookmark: [Bookmark],
+    // note: [Note]
   });
 
 

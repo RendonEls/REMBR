@@ -34,7 +34,8 @@ module.exports = {
     res.redirect("/");
   },
   createBookmark: (req, res) => {
-    User.findOne({}).then(result => res.render("user/newBookmark", { result }));
+    User.findOne({})
+    .then(result => res.render("user/newBookmark", { result }));
   },
   NewBookmark: (req, res) => {
     User.findById(req.user._id).then(user => {
@@ -45,7 +46,7 @@ module.exports = {
       })
         .then(newBookmark => {
         user.bookmark.push(newBookmark);
-        user.save().then(()=> res.render("user/show")
+        user.save().then(()=> res.redirect("/user/show")
         );
       });
     });
@@ -53,7 +54,6 @@ module.exports = {
   ShowUpdate: (req, res) => {
     res.render('user/updateBookmark', {id: req.params.id})  //if this doesn't work try req.params.bookmark.id
   },
-
   UpdateBookmark: (req, res) => {
     User.findOneAndUpdate(
       {"_id": req.user._id, "bookmark._id": req.params.id},
@@ -65,26 +65,12 @@ module.exports = {
       },{new: true}
     ).then(() => res.redirect('/user/show'))
   },
-
   DeleteBookmark: (req, res) => {
-    console.log(req.params.id)
-    User.findOneAndDelete(
-      {"_id": req.user._id, "bookmark._id": req.params.id})
-    .then(() => res.redirect('/user/show'))
+    User.findById(req.user._id)
+    .then((user) => {
+      user.bookmark.id(req.params.id).remove()
+      user.save()
+      res.redirect('/user/show')
+  })
   }
 }
-
-
-   // (req.user._id).then(user => {
-
-    // })
-    // Bookmark.findByIdAndUpdate(req.params._id).then(() => {
-    //   req.body
-    //   // Bookmark.update({
-    //   //   title: req.body.title,
-    //   //   url: req.body.url,
-    //   //   text: req.body.text
-    //   // })
-    //   console.log(req.body)
-    //   // console.log(user)   //need to be able to access the correct user to update the bookmark object
-    // })
