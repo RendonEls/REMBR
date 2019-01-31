@@ -8,8 +8,10 @@ const passport = require("passport");
 const methodOverride = require("method-override");
 const app = express()
 
+
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(methodOverride("_method"));
 app.use(
   session({
     secret: "EXPRESS-IS-AWESOME",
@@ -30,7 +32,6 @@ app.use(function (req, res, next) {
 
 app.use(express.static("public"));
 app.set("view engine", "hbs");
-app.use(methodOverride("_method"));
 
 app.use(require("./routes/index.js"));
 

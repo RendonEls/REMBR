@@ -48,11 +48,17 @@ module.exports = {
         res.render("/user/show");
       });
     });
-  }
+  },
+  ShowUpdate: (req, res) => {
+    res.render('user/updateBookmark', {id: req.params.id})  //if this doesn't work try req.params.bookmark.id
+  },
+  
   // UpdateBookmark: (req, res) => {
 
   // }
-  // DeleteBookmark: (req, res) => {
-
-  // }
-};
+  DeleteBookmark: (req, res) => {
+    console.log(req.params.id)
+    Bookmark.findOneAndDelete({ _id: req.params.id })
+    .then(() => res.redirect('/user/show'))
+  }
+}

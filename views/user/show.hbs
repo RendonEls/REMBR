@@ -7,11 +7,23 @@
       <div>
         <ul>
   {{#each user.bookmark}}
-  <div class="{{_id}}">
+ 
+  <div class="{{id}}">
     <a href="{{url}}">{{title}}</a>
         <li>{{text}}</li>
-        {{_id}}
+        {{id}}
   </div>
+  <div> 
+    <form method="GET" action="/user/{{id}}/updateBookmark">
+      <input type="submit" value="update">
+    </form>
+  </div>
+    <div> 
+    <form method="GET" action="/user/{{id}}?_method=DELETE">
+      <input type="submit" value="Delete">
+    </form>
+  </div>
+  <p></p>
   {{/each}}
   </ul>
   </div>
