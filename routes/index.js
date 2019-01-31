@@ -3,7 +3,7 @@ const router = express.Router();
 
 router.use('/', require('./home'))
 router.use('/user', require('./user'));
-router.use('/note', require('./note'));
+// router.use('/note', require('./note'));
 
 
 router.all('*', (req, res) => {

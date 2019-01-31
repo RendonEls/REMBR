@@ -21,7 +21,7 @@ const User = new Schema({
     email: String,
     password: String,
     bookmark: [Bookmark],
-    // note: [Note]
+    note: [Note]
   });
 
 
@@ -36,5 +36,6 @@ const User = new Schema({
   
   module.exports = {
     User: mongoose.model("User", User),
-    Bookmark: mongoose.model("Bookmark", Bookmark)
+    Bookmark: mongoose.model("Bookmark", Bookmark),
+    Note: mongoose.model("Note", Note)
   }

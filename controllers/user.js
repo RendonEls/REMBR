@@ -1,4 +1,4 @@
-const { User, Bookmark } = require("../models/User");
+const { User, Bookmark, Note } = require("../models/User");
 const passport = require("passport");
 
 module.exports = {
@@ -76,6 +76,19 @@ module.exports = {
   newNote:  (req, res) => {
     User.findOne({})
     .then(result => res.render("user/newNote", { result }));
+  },
+  createNote: (req, res) => {
+    User.findById(req.user._id).then(user => {
+      Note.create({
+        title: req.body.title,
+        note: req.body.note,
+      })
+        .then(addNote => {
+        user.note.push(addNote);
+        user.save().then(()=> res.redirect("/user/show")
+        );
+      });
+    });
   }
  
 }
