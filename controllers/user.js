@@ -52,13 +52,44 @@ module.exports = {
   ShowUpdate: (req, res) => {
     res.render('user/updateBookmark', {id: req.params.id})  //if this doesn't work try req.params.bookmark.id
   },
-  
-  // UpdateBookmark: (req, res) => {
 
-  // }
+  UpdateBookmark: (req, res) => {
+    Bookmark.findByIdAndUpdate(req.params._id).then(() => {
+      req.body
+      // Bookmark.update({
+      //   title: req.body.title,
+      //   url: req.body.url,
+      //   text: req.body.text
+      // })
+      console.log(req.body)
+      res.render('/user/show')
+      // console.log(user)   //need to be able to access the correct user to update the bookmark object
+    })
+  },
+
   DeleteBookmark: (req, res) => {
     console.log(req.params.id)
-    Bookmark.findOneAndDelete({ _id: req.params.id })
+    Bookmark.findOneAndDelete({ _id: req.params.id })  //how to target id from list instead of url
     .then(() => res.redirect('/user/show'))
   }
 }
+
+
+
+// Bookmark.findOneAndUpdate(
+//   {id: req.params._id}, 
+//   req.body, {new:true}).then((overwrite) => {
+//     console.log(overwrite)
+//     title = overwrite.title
+//     url = overwrite.url
+//     text = overwrite.text
+  
+//     overwrite.save()
+//   // req.body
+//   // Bookmark.update({
+//   //   title: req.body.title,
+//   //   url: req.body.url,
+//   //   text: req.body.text
+//   // })
+//   console.log(req.body)
+//   res.redirect("/user/show")

@@ -19,7 +19,7 @@
     </form>
   </div>
     <div> 
-    <form method="GET" action="/user/{{id}}?_method=DELETE">
+    <form method="POST" action="/user/{{id}}?_method=DELETE">
       <input type="submit" value="Delete">
     </form>
   </div>
@@ -32,3 +32,4 @@
 {{/if}}
 
 <input type="submit" value="Add New" class="btn waves-effect waves-light" onclick="location.href='/user/newBookmark'">
+

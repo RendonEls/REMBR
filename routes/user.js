@@ -17,7 +17,7 @@ router.post('/newBookmark/:id', userController.NewBookmark)
 
 
 
-// router.put('/newBookmark/:id', userController.UpdateBookmark)  
+router.put('/updateBookmark/:id', userController.UpdateBookmark)  
 
 router.get('/:id/updateBookmark', userController.ShowUpdate)
 router.delete('/:id', userController.DeleteBookmark)
