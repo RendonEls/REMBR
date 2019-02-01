@@ -6,7 +6,6 @@ const Note = new Schema ({
   title: String,
   note: String
 })
-
 const Bookmark = new Schema ({
   title: String,
   url: String,
@@ -16,7 +15,6 @@ const Bookmark = new Schema ({
       default: Date.now()
   }
 })
-
 const User = new Schema({
     email: String,
     password: String,

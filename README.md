@@ -3,11 +3,11 @@
 REMBR is a content manager that allows the user to save Links, their titles and comments, as well as peronal notes to an online database.  
 User must login to save information, information is saved to the user model and accessed only by logging in.  Information is only viewable by logged in user.
 
-It is a  MngoDB, Express, and Node.js application. REMBR featuers full CRUD (create, read, update, destory).
+It is a MEHN (MngoDB, Express, Handlebars, and Node.js) application. REMBR featuers full CRUD (create, read, update, destory).
 
 This app has been deloyed to Heroku. Given how slow Heroku may be, you may find you need to refresh the page a few times to wake it up.
 
-![Screenshot](planning/images/sreenshot.png)
+![Screenshot](./planning/images/Screenshot.png)
 
 
 # Worksing in progress
@@ -23,7 +23,7 @@ As of Feb. 1, 2019:
 
 # Plan for Creation:
 
-![Plan](planning/images/Planning-chart.png)
+![Plan](./planning/images/Planning-chart.png)
 
 
 ###Planning
