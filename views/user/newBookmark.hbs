@@ -1,20 +1,23 @@
-<section class="row">
-  <h4>New REMBR:</h4>
-
-  {{!-- action = url --}}
-
-  <form action="/user/newBookmark/{{result.id}}" method="post" class="createRembr">
-    <p class="input-field">
-      <input type="text" name="title" placeholder="title">
-    </p>
-    <p class="input-field">
-      <input type="url" name="url" placeholder="url">
-    </p>
-    <p class="input-field">
-      <input type="text" name="text" placeholder="text">
-    </p>
-    <p class="input-field">
-      <input type="submit" value="User" class="btn waves-effect waves-light">
-    </p>
-  </form>
-</section>
+<div class="newbookmark-wrap-1">
+  <div class="newbookmark-wrap-2">
+    <div class="newbookmark-wrap-3">
+      <section class="row">
+        <h4>New REMBR:</h4>
+        <form action="/user/newBookmark/{{result.id}}" method="post" class="createRembr">
+          <p class="input-field">
+            <input type="text" name="title" placeholder="title">
+          </p>
+          <p class="input-field">
+            <input type="url" name="url" placeholder="url">
+          </p>
+          <p class="input-field">
+            <input type="text" name="text" placeholder="text">
+          </p>
+          <p class="input-field">
+            <input type="submit" value="User" class="btn waves-effect waves-light">
+          </p>
+        </form>
+      </section>
+    </div>
+  </div>
+</div>

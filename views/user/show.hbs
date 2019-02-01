@@ -1,64 +1,73 @@
 
-<h1>this finally works</h1>
-{{#if user}}
-  <section class="bookmarks">
-    <div>
-      <p>{{user.email}}</p>
-      <div>
-        <ul>
-  {{#each user.bookmark}}
- 
-  <div class="{{id}}">
-    <a href="{{url}}">{{title}}</a>
-        <li>{{text}}</li>
+<div class= "show-wrap-1">
+  <div class="show-wrap-2">
+    <div class="show-wrap-3">
+        {{!-- <h3>REMBR Board</h3> --}}
+        <div class="column-1">
+                {{#if user}}
+                  <section class="bookmarks">
+                    <div>
+                      <p>{{user.email}}</p>
+                      <div>
+                        <ul>
+                  {{#each user.bookmark}}
+                
+                  <div class="{{id}}">
+                    <a href="{{url}}">{{title}}</a>
+                        <li>{{text}}</li>
 
-  </div>
-  <div> 
-    <form method="GET" action="/user/{{id}}/updateBookmark">
-      <input type="submit" value="update">
-    </form>
-  </div>
-    <div> 
-    <form method="POST" action="/user/{{id}}?_method=DELETE">
-      <input type="submit" value="Delete">
-    </form>
-  </div>
-  <p></p>
-  {{/each}}
-  </ul>
+                  </div>
+                  <div> 
+                    <form method="GET" action="/user/{{id}}/updateBookmark">
+                      <input type="submit" value="update">
+                    </form>
+                  </div>
+                    <div> 
+                    <form method="POST" action="/user/{{id}}?_method=DELETE">
+                      <input type="submit" value="Delete">
+                    </form>
+                  </div>
+                  <p></p>
+                  {{/each}}
+                  </ul>
+                  </div>
+                    </div>
+                  </section>
+                   <input type="submit" value="Add New Bookmark" class="btn waves-effect waves-light" onclick="location.href='/user/newBookmark'">
+          </div>
+
+
+
+    <div class="column-2">
+        <section class="note">
+              <div>
+                <ul>
+          {{#each user.note}}
+        
+          <div class="{{id}}">
+            
+                <li>{{title}}</li>
+                <li>{{note}}</li>
+
+          </div>
+          <div> 
+            </form>
+          </div>
+            <div> 
+            <form method="POST" action="/user/{{id}}?_method=DELETE">
+              <input type="submit" value="remove">
+            </form>
+          </div>
+          <p></p>
+          {{/each}}
+          </ul>
+          </div>
+        </section>
+        {{/if}}
+
+       
+    <input type="submit" value="Add New Note" class="btn waves-effect waves-light" onclick="location.href='/user/newNote'">
   </div>
     </div>
-  </section>
-
-
-
-
-<section class="note">
-      <div>
-        <ul>
-  {{#each user.note}}
- 
-  <div class="{{id}}">
-    
-        <li>{{title}}</li>
-        <li>{{note}}</li>
-
   </div>
-  <div> 
-    </form>
-  </div>
-    <div> 
-    <form method="POST" action="/user/{{id}}?_method=DELETE">
-      <input type="submit" value="remove">
-    </form>
-  </div>
-  <p></p>
-  {{/each}}
-  </ul>
-  </div>
-</section>
-{{/if}}
-
-<input type="submit" value="Add New Bookmark" class="btn waves-effect waves-light" onclick="location.href='/user/newBookmark'">
-
-<input type="submit" value="Add New Note" class="btn waves-effect waves-light" onclick="location.href='/user/newNote'">
+</div>

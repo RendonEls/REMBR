@@ -1,24 +1,26 @@
-<div class="mainLoginContainer">
-  <div class ="loginContainer">
-  {{#if message}}
-    <div class="alert alert-danger">{{message}}</div>
-  {{/if}}
-  <section class="row">
-    <h4>Log In:</h4>
+<div class="login-wrap-1">
+  <div class ="login-wrap-2">
+    <div class="login-wrap-3">
+        {{#if message}}
+          <div class="alert alert-danger">{{message}}</div>
+        {{/if}}
+        <section class="row">
+          <h1>REMBR</h1>
 
-    <form action="" method="POST" class="auth-form">
-      <p class="input-field">
-        <input type="email" name="email" placeholder="email" class="loginInput">
-      </p>
-      <p class="input-field">
-        <input type="password" name="password" placeholder="Password" class="loginInput">
-      </p>
-      <p class="input-field">
-        <input type="submit" value="Log In">
-      </p>
+          <form action="" method="POST" class="auth-form">
+            <p class="input-field">
+              <input type="email" name="email" placeholder="email" class="loginInput">
+            </p>
+            <p class="input-field">
+              <input type="password" name="password" placeholder="Password" class="loginInput">
+            </p>
+            <p class="loginButton">
+              <input type="submit" value="Log In">
+            </p>
 
-    </form>
-  </section>
+          </form>
+        </section>
+    </div>
   </div>
 </div>
 {{!-- add si --}}

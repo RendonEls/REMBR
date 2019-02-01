@@ -1,13 +1,18 @@
-<h1>newNote</h1>
 
-
-<form action="/user/newNote/{{result.id}}" method="post" class="createRembr">
-    <p class="input-field">
-      <input type="text" name="title" placeholder="title">
-    </p>
-    <p class="input-field">
-      <textarea  name="note" cols="60" rows="10" placeholder="Note"></textarea>
-    <p>
-      <input type="submit" value="Submit" class="newNotesubmit">
-      </p>
-  </form>
+<div class="newnote-wrap-1">
+  <div class="newnote-wrap-2">
+    <div class="newnote-wrap-3">
+      <h3>newNote</h3>
+      <form action="/user/newNote/{{result.id}}" method="post" class="createRembr">
+          <p class="input-field">
+            <input type="text" name="title" placeholder="title">
+          </p>
+          <p class="input-field">
+            <textarea  name="note" cols="60" rows="10" placeholder="Note"></textarea>
+          <p>
+            <input type="submit" value="Submit" class="newNotesubmit">
+            </p>
+        </form>
+      </div>
+    </div>
+  </div>
