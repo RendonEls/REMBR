@@ -26,7 +26,7 @@ As of Feb. 1, 2019:
 ![Plan](./planning/images/Planning-chart.png)
 
 
-#Planning
+# Planning
 
 
   Day 1: 
