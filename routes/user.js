@@ -24,7 +24,7 @@ router.delete('/:id', userController.DeleteBookmark)
 //for note models
 router.get('/newNote', userController.newNote)
 router.post('/newNote/:id', userController.createNote)
-router.delete('/:id', userController.DeleteNote)
+router.delete('/note/:id', userController.DeleteNote)
 
 module.exports = router
 
