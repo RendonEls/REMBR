@@ -3,19 +3,19 @@
     <div class="newbookmark-wrap-3">
       <section class="row">
         <h3>New REMBR:</h3>
-        <form action="/user/newBookmark/{{result.id}}" method="post" class="createRembr">
-          <p class="input-field">
-            <input type="text" name="title" placeholder="title">
-          </p>
-          <p class="input-field">
-            <input type="url" name="url" placeholder="url">
-          </p>
-          <p class="input-field">
-            <input type="text" name="text" placeholder="text">
-          </p>
-          <p class="input-field">
+        <form action="/user/newBookmark/{{result.id}}" method="post">
+          <div class="input-field">
+            <input type="text" name="title" placeholder="title" class="newBookmark-text-1">
+          </div>
+          <div class="input-field">
+            <input type="url" name="url" placeholder="url" class="newBookmark-text-2">
+          </div>
+          <div class="input-field">
+            <input type="text" name="text" placeholder="text" class="newBookmark-text-3">
+          </div>
+          <div class="input-field">
             <input type="submit" value="New Bookmark" class="btn waves-effect waves-light">
-          </p>
+          </div>
         </form>
       </section>
     </div>
