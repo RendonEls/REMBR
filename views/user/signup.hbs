@@ -2,7 +2,7 @@
   <div class="signup-wrap-2">
     <div class="signup-wrap-3">
 <section class="row">
-  <h4>Sign Up:</h4>
+  <h3>Sign Up:</h3>
 
   {{#if message}}
     <p class="alert">{{message}}</p>
@@ -10,13 +10,13 @@
   
   <form action="" method="POST" class="auth-form">
     <p class="input-field">
-      <input type="email" name="email" placeholder="email">
+      <input type="email" name="email" placeholder="email" class="signup-email-field-1">
     </p>
     <p class="input-field">
-      <input type="password" name="password" placeholder="Password">
+      <input type="password" name="password" placeholder="Password" class="signup-password-field-2">
     </p>
-    <p class="input-field">
-      <input type="submit" value="Sign Up" class="btn waves-effect waves-light">
+    <p class="signup-button">
+      <input type="submit" value="Submit">
     </p>
   </form>
 </section>

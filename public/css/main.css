@@ -123,7 +123,7 @@ input[type=email]{
   font-size: 20px;
   font-weight: 600;
 }
-.loginButton input[type=submit]{
+.loginButton input[type=submit] {
     background-color:  rgba(244, 164, 35, .6);
   border: none;
   border-radius: 10%;
@@ -136,6 +136,18 @@ input[type=email]{
   font-weight: 600;
 }
 
+.signup-button input[type=submit] {
+    background-color:  rgba(244, 164, 35, .6);
+    border: none;
+    border-radius: 10%;
+    color: rgba(255, 255, 255, .5);;
+    padding: 16px 50px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+}
 
 
 /* User dashboard (Show) styling */
@@ -226,7 +238,7 @@ input[type=email]{
     justify-content: center;
     margin-bottom: 15px;
   }
-.login-email-field, .login-password-field {
+.login-email-field, .login-password-field, .signup-email-field-1, .signup-password-field-2{
     width: 85%;
     height: 50px;
     padding: 12px 20px;
