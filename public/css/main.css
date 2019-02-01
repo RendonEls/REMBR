@@ -236,7 +236,19 @@ input[type=email]{
 }
 /* End User dashboard (Show) styling */
 
-
+.newBookmark-button input[type=submit]{
+    background-color:  rgba(244, 164, 35, .6);
+    border: none;
+    border-radius: 10%;
+    color: rgba(255, 255, 255, .5);;
+    padding: 10px 50px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    bottom: 0;
+}
 .newBookmark-text-1, .newBookmark-text-2, .newBookmark-text-3{
     width: 50%;
     height: 50px;
