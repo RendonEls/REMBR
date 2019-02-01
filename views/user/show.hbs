@@ -20,12 +20,16 @@
                   </div>
                   <div> 
                     <form method="GET" action="/user/{{id}}/updateBookmark">
-                      <input type="submit" value="update">
+                      <div class= "bookmark-update-button">
+                        <input type="submit" value="update">
+                      </div>
                     </form>
                   </div>
                     <div> 
                     <form method="POST" action="/user/{{id}}?_method=DELETE">
-                      <input type="submit" value="Delete">
+                      <div class = "bookmark-delete-button">
+                        <input type="submit" value="Delete">
+                      </div>
                     </form>
                   </div>
                   <p></p>
@@ -49,7 +53,7 @@
         
           <div class="{{id}}">
             
-                <li>{{title}}</li>
+                <h4>{{title}}</h4>
                 <li>{{note}}</li>
 
           </div>
@@ -58,7 +62,9 @@
           </div>
             <div> 
             <form method="POST" action="/user/note/{{id}}?_method=DELETE">
-              <input type="submit" value="remove">
+              <div class="note-delete-button">
+                <input type="submit" value="remove">
+              </div>
             </form>
           </div>
           <p></p>
