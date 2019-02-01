@@ -209,7 +209,6 @@ input[type=email]{
   cursor: pointer;
   font-size: 20px;
   font-weight: 600;
-  position: aboslute !important;
   bottom: 0;
 
 }
@@ -219,8 +218,7 @@ input[type=email]{
     position: aboslute;
     bottom: 0;
 } */
-
-
+/* Text field styling */
 .newBookmark-text-1, .newBookmark-text-2, .newBookmark-text-3{
     width: 50%;
     height: 50px;
@@ -235,7 +233,20 @@ input[type=email]{
     justify-content: center;
     margin-bottom: 15px;
   }
-
+.login-email-field, .login-password-field {
+    width: 85%;
+    height: 50px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+    font-size: 17px;
+    position: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
 
 .signup-wrap-1{
     margin: auto 0px;
