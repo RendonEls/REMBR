@@ -27,3 +27,5 @@ router.post('/newNote/:id', userController.createNote)
 router.delete('/:id', userController.DeleteNote)
 
 module.exports = router
+
+require('../')

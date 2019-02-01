@@ -1,6 +1,7 @@
 
 <div class= "show-wrap-1">
   <div class="show-wrap-2">
+    <p>{{user.email}}</p>
     <div class="show-wrap-3">
         {{!-- <h3>REMBR Board</h3> --}}
         <div class="column-1">
@@ -33,7 +34,9 @@
                   </div>
                     </div>
                   </section>
+                  <div class="show-button">
                    <input type="submit" value="Add New Bookmark" class="btn waves-effect waves-light" onclick="location.href='/user/newBookmark'">
+                  </div>
           </div>
 
 
@@ -65,8 +68,9 @@
         </section>
         {{/if}}
 
-       
-    <input type="submit" value="Add New Note" class="btn waves-effect waves-light" onclick="location.href='/user/newNote'">
+       <div class="show-button">
+          <input type="submit" value="Add New Note" class="btn waves-effect waves-light" onclick="location.href='/user/newNote'">
+        </div>
   </div>
     </div>
   </div>
