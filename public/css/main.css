@@ -285,7 +285,43 @@ textarea {
     align-items: center;
     justify-content: center;
 }
+.newnote-wrap-1{
+    margin: auto 0px;
+    min-height: 100vh;
+    /* min-width: 500px;
+    max-width: 900px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.newnote-wrap-2{
+    width: 95%;
+    height: 900px;
+    background: rgba(244, 164, 35, .6);
+    border: 2px solid rgb(97, 95, 95); 
+    border-radius: 10px;
 
+    display: flex;
+    flex-direction: column;
+    flex-wrap: none;
+    align-items: center;
+    justify-content: center;
+}
+.newnote-wrap-3{
+    width: 90%;
+    height: 800px;
+    background: grey;
+    /* background: rgba(244, 164, 35, .6); */
+    border: 2px solid rgb(97, 95, 95); 
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: none;
+    align-items: center;
+    justify-content: center;
+}
 
 
 
