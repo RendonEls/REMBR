@@ -1,23 +1,24 @@
-{{#if message}}
-  <div class="alert alert-danger">{{message}}</div>
-{{/if}}
+<div class="mainLoginContainer">
+  <div class ="loginContainer">
+  {{#if message}}
+    <div class="alert alert-danger">{{message}}</div>
+  {{/if}}
+  <section class="row">
+    <h4>Log In:</h4>
 
+    <form action="" method="POST" class="auth-form">
+      <p class="input-field">
+        <input type="email" name="email" placeholder="email" class="loginInput">
+      </p>
+      <p class="input-field">
+        <input type="password" name="password" placeholder="Password" class="loginInput">
+      </p>
+      <p class="input-field">
+        <input type="submit" value="Log In">
+      </p>
 
-<section class="row">
-  <h4>Log In:</h4>
-
-  <form action="" method="POST" class="auth-form">
-    <p class="input-field">
-      <input type="email" name="email" placeholder="email">
-    </p>
-    <p class="input-field">
-      <input type="password" name="password" placeholder="Password">
-    </p>
-    <p class="input-field">
-      <input type="submit" value="Log In" class="btn waves-effect waves-light">
-    </p>
-      <input type="submit" value="Sign Up" class="btn waves-effect waves-light" onclick="location.href='/user/signup'">
-  </form>
-</section>
-
+    </form>
+  </section>
+  </div>
+</div>
 {{!-- add si --}}

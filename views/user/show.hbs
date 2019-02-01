@@ -1,5 +1,5 @@
 
-<h1>this needs to work</h1>
+<h1>this finally works</h1>
 {{#if user}}
   <section class="bookmarks">
     <div>
@@ -11,7 +11,7 @@
   <div class="{{id}}">
     <a href="{{url}}">{{title}}</a>
         <li>{{text}}</li>
-        {{id}}
+
   </div>
   <div> 
     <form method="GET" action="/user/{{id}}/updateBookmark">
@@ -30,7 +30,10 @@
     </div>
   </section>
 
-    <section class="note">
+
+
+
+<section class="note">
       <div>
         <ul>
   {{#each user.note}}
@@ -38,24 +41,22 @@
   <div class="{{id}}">
     
         <li>{{title}}</li>
-        <li>{{text}}</li>
-        {{id}}
+        <li>{{note}}</li>
+
   </div>
   <div> 
-    <form method="GET" action="/user/{{id}}/updateBookmark">
-      <input type="submit" value="update">
     </form>
   </div>
     <div> 
     <form method="POST" action="/user/{{id}}?_method=DELETE">
-      <input type="submit" value="Delete">
+      <input type="submit" value="remove">
     </form>
   </div>
   <p></p>
   {{/each}}
   </ul>
   </div>
-  </section>
+</section>
 {{/if}}
 
 <input type="submit" value="Add New Bookmark" class="btn waves-effect waves-light" onclick="location.href='/user/newBookmark'">

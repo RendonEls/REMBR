@@ -1,0 +1,118 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body {
+    background: #37718E;
+    color: rgba(255, 255, 255, .7);
+height: 100%;
+    
+    
+}
+
+.homeContainerContainer {
+    margin: auto 0px;
+
+    min-height: 100vh;
+    /* min-width: 500px;
+    max-width: 900px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.homeContainer {
+    width: 80%;
+    height: 750px;
+    background: grey;
+    border: 2px solid rgb(97, 95, 95); 
+    border-radius: 10px;
+
+
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: none;
+    align-items: center;
+    justify-content: center;
+}
+h1 {
+    /* font-family: 'IM Fell Great Primer SC', serif; */
+    font-family: "Zefani Stencil";
+    font-size: 90px;
+    text-decoration: underline;
+    padding-bottom: 80px;
+}
+.mainLoginContainer{
+    margin: auto 0px;
+
+    min-height: 100vh;
+    /* min-width: 500px;
+    max-width: 900px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.loginContainer {
+    width: 80%;
+    height: 750px;
+    background: grey;
+    border: 2px solid rgb(97, 95, 95); 
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: none;
+    align-items: center;
+    justify-content: center;
+}
+.loginInput{
+    
+}
+input[type=submit]{
+    background-color:  rgba(244, 164, 35, .6);
+  border: none;
+  border-radius: 10%;
+  color: rgba(255, 255, 255, .5);;
+  padding: 16px 50px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+textarea {
+    width: 50%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+  }
+
+  /* input[type=text] {
+    background-color: white;
+    background-position: 10px 10px; 
+
+    padding-left: 40px;
+  } */

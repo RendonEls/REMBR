@@ -66,7 +66,7 @@ module.exports = {
     ).then(() => res.redirect('/user/show'))
   },
   DeleteBookmark: (req, res) => {
-    User.findById(req.user._id)
+    User.findById(req.user.id)
     .then((user) => {
       user.bookmark.id(req.params.id).remove()
       user.save()
@@ -89,6 +89,14 @@ module.exports = {
         );
       });
     });
-  }
- 
+  },
+  DeleteNote: (req, res) => {
+    User.findById(req.user.id)
+    .then((user) => {
+      console.log(user)
+      user.note.id(req.params.id).remove()
+      user.save()
+      res.redirect('/user/show')
+  })
+}
 }
